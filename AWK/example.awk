@@ -31,3 +31,7 @@ for (i in a)
 
 //重定向
 print "" >"result.txt"
+
+
+//设置分割符
+awk -F '.' '{print $1}' 1.txt
