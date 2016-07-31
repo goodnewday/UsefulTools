@@ -23,7 +23,7 @@ AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 
 #****************************This is 3Party Library   Directories**************************
 LINK_DIRECTORIES(${PROJECT_BINARY_DIR}/../../../Libs/Linux/)
-
+LINK_DIRECTORIES(./)
 
 #****************************This is 3Party Library **************************
 LINK_LIBRARIES(jemalloc)
