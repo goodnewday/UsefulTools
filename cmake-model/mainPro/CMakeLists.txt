@@ -9,7 +9,6 @@ if(DEBUG)
     ADD_DEFINITIONS(-g)
 else(DEBUG)
 	message( STATUS "==============================release============================" )
-    ADD_DEFINITIONS(-O2)
 endif()
 
 ADD_DEFINITIONS(-Wno-sign-compare -Wno-enum-compare)
