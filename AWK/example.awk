@@ -35,3 +35,6 @@ print "" >"result.txt"
 
 //设置分割符
 awk -F '.' '{print $1}' 1.txt
+
+//获取数组元素数据
+length(array)

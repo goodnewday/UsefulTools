@@ -1,0 +1,2 @@
+monitor 可用于检测物理内存，虚拟内存，cpu;
+format_data 用于将monitor采集的数据格式化(./format_data input_file_name output_file_name),处理后的数据可以直接更名生成xls文件，用于通过excel生成图表
