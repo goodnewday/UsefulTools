@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 lockfile=/tmp/mylock
 
 if 　(set -C;echo $$ >$lockfile) 2>/dev/null　;　then
@@ -9,12 +8,10 @@ if 　(set -C;echo $$ >$lockfile) 2>/dev/null　;　then
 # 当此lock文件存在时，if返回失败，跳到else
 
 	trap 'rm $lockfile; exit $?' INT TERM EXIT	# trap保证了脚本异常中断时，释放锁文件（删）
-	{
-		cat <<-E
+	{		
 			my critical code...	# 此处是正式的脚本代码
 			my critical code...
-			my critical code...
-		E
+			my critical code...		
 	}
 	rm  $lockfile		# 正式代码运行完了，释放锁文件
 	trap - INT TERM EXIT	# 恢复trap的设置（如在脚本最后时，非必要恢复）
