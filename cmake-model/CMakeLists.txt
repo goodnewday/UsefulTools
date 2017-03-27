@@ -28,6 +28,12 @@ LINK_DIRECTORIES(./)
 #****************************This is 3Party Library **************************
 LINK_LIBRARIES(jemalloc)
 
+#  file(GLOB_RECURSE ALL_FILETYPE_SRCS . "*.cpp" "*.c" "*.h" "*.hpp" )
+#  support this files ,but don't contain subdirectories
+
+
+file(GLOB ALL_FILETYPE_SRCS . "*.cpp" "*.c" "*.h" "*.hpp" )
+#  support this files ,contain subdirectories
 
 #****************************This is Output Directory************************
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../../../Libs/Linux)
@@ -35,7 +41,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../../../Libs/Linux)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../../../Libs/Linux)
 
 #****************************This is Output Library**************************
-ADD_EXECUTABLE(${PROJECT_NAME} ${DIR_SRCS})
+ADD_EXECUTABLE(${PROJECT_NAME} ${DIR_SRCS}   ${ALL_FILETYPE_SRCS})
 #ADD_LIBRARY(${PROJECT_NAME} SHARED ${DIR_SRCS} )
 #ADD_LIBRARY(${PROJECT_NAME} STATIC ${DIR_SRCS} )
 TARGET_LINK_LIBRARIES( ${PROJECT_NAME} jemalloc)
