@@ -1,0 +1,4 @@
+systemctl restart apps_launcher
+test_video_service_dyn_air_api  --stream 0 --stream-framerate 10
+test_encode --show-all-info
+grep consume /home/media/log_psh.log
