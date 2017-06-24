@@ -1,3 +1,3 @@
 # UsefulTools
-useful tools to solve problem faster
+useful tools to solve problem faster.
 
