@@ -14,3 +14,5 @@ COPY D:\svn\SDL2-2.0.5\VisualC\Win32\Debug\SDL2.lib     D:\svn\AVXPlayer\AVXPlay
 
 
 COPY D:\svn\SDL2-2.0.5\VisualC\Debug\quicklog.dll       D:\svn\AVXPlayer\Debug
+
+//
