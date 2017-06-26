@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# loop          
-                
-for i in {1..10}
-do             
-        echo $i
+# loop
+for((i=1;i<100;i++))
+do
+   echo $i
 done
