@@ -25,8 +25,14 @@ AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 LINK_DIRECTORIES(${PROJECT_BINARY_DIR}/../../../Libs/Linux/)
 LINK_DIRECTORIES(./)
 
+if (WIN32)
+	list(APPEND LIB_LIST ws2_32.lib websockets_static.lib)
+elseif (UNIX)
+	list(APPEND LIB_LIST pthread websockets)
+endif()
+
 #****************************This is 3Party Library **************************
-LINK_LIBRARIES(jemalloc)
+LINK_LIBRARIES(${LIB_LIST})
 
 #  file(GLOB_RECURSE ALL_FILETYPE_SRCS . "*.cpp" "*.c" "*.h" "*.hpp" )
 #  support this files ,but don't contain subdirectories
@@ -44,7 +50,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../../../Libs/Linux)
 ADD_EXECUTABLE(${PROJECT_NAME} ${DIR_SRCS}   ${ALL_FILETYPE_SRCS})
 #ADD_LIBRARY(${PROJECT_NAME} SHARED ${DIR_SRCS} )
 #ADD_LIBRARY(${PROJECT_NAME} STATIC ${DIR_SRCS} )
-TARGET_LINK_LIBRARIES( ${PROJECT_NAME} jemalloc)
+TARGET_LINK_LIBRARIES( ${PROJECT_NAME} ${LIB_LIST})
 
 
 
